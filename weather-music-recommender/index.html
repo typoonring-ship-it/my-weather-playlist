@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오늘 날씨, 어떤 음악? | Weather Playlist</title>
+    
+    <!-- Google Fonts: Outfit & Noto Sans KR -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="theme-default">
+    <!-- Ambient Background Decorative Circles -->
+    <div class="ambient-circle circle-1"></div>
+    <div class="ambient-circle circle-2"></div>
+    
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <h1 id="app-title"><span class="english">SkyTunes</span><span class="korean">오늘 날씨, 어떤 음악?</span></h1>
+            <p class="app-subtitle">실시간 날씨를 감지하여 지금 이 순간에 딱 어울리는 감성 플레이리스트를 선물합니다.</p>
+        </header>
+
+        <main class="app-content">
+            <!-- Glassmorphism Card -->
+            <div class="glass-card" id="main-card">
+                
+                <!-- Weather Info Section -->
+                <section class="weather-section" aria-label="현재 날씨 정보">
+                    <div class="location-control">
+                        <span id="location-name"><i class="fa-solid fa-location-dot"></i> 위치 탐색 중...</span>
+                        <button id="btn-refresh-location" class="icon-btn" title="위치 다시 가져오기">
+                            <i class="fa-solid fa-arrows-rotate"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="weather-display">
+                        <div class="weather-icon-container" id="weather-icon-wrapper">
+                            <!-- Weather icon will be loaded dynamically via JS -->
+                            <div class="loader-spinner"></div>
+                        </div>
+                        <div class="weather-details">
+                            <span id="weather-temp">--°C</span>
+                            <span id="weather-desc">날씨 정보를 가져오는 중...</span>
+                        </div>
+                    </div>
+                </section>
+
+                <hr class="divider">
+
+                <!-- Recommender Panel Section -->
+                <section class="recommender-section" aria-label="추천 노래 정보">
+                    <div class="recommendation-header">
+                        <span class="badge" id="weather-badge">Recommendation</span>
+                        <span class="recommendation-title">오늘의 추천 음악</span>
+                    </div>
+
+                    <!-- Song Display Card -->
+                    <div class="song-card">
+                        <!-- Disc Vinyl Mockup -->
+                        <div class="vinyl-container">
+                            <div class="vinyl-disc" id="vinyl-disc">
+                                <div class="vinyl-center"></div>
+                            </div>
+                            <!-- Small note icon floating -->
+                            <i class="fa-solid fa-music music-note-icon note-1"></i>
+                            <i class="fa-solid fa-music music-note-icon note-2"></i>
+                        </div>
+
+                        <!-- Song Info -->
+                        <div class="song-info">
+                            <h2 id="song-title">추천 중...</h2>
+                            <p id="song-artist">잠시만 기다려 주세요</p>
+                            
+                            <!-- Simulated Music Waves -->
+                            <div class="music-wave" id="music-wave-container">
+                                <span class="wave-bar"></span>
+                                <span class="wave-bar"></span>
+                                <span class="wave-bar"></span>
+                                <span class="wave-bar"></span>
+                                <span class="wave-bar"></span>
+                                <span class="wave-bar"></span>
+                                <span class="wave-bar"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="action-buttons">
+                        <button id="btn-reroll" class="btn primary-btn">
+                            <i class="fa-solid fa-shuffle"></i> 다른 노래 추천받기
+                        </button>
+                        
+                        <div class="search-links">
+                            <a id="link-youtube" href="#" target="_blank" class="btn outline-btn youtube-btn">
+                                <i class="fa-brands fa-youtube"></i> YouTube 검색
+                            </a>
+                            <a id="link-spotify" href="#" target="_blank" class="btn outline-btn spotify-btn">
+                                <i class="fa-brands fa-spotify"></i> Spotify 검색
+                            </a>
+                        </div>
+                    </div>
+                </section>
+                
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="app-footer">
+            <p>© 2026 SkyTunes. Powered by <a href="https://open-meteo.com/" target="_blank" rel="noopener noreferrer">Open-Meteo API</a></p>
+            <p class="author-tag">기말고사 대체 과제 제출용</p>
+        </footer>
+    </div>
+
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
